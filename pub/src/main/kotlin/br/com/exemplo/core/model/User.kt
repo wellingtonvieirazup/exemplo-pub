@@ -6,6 +6,6 @@ import java.util.*
 @Introspected
 class User(
     val id: UUID?,
-    val login: String?,
-    val password: String?,
+    val login: String,
+    val password: String,
 )

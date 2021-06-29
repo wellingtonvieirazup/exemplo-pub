@@ -18,6 +18,9 @@ class UserController(private val service: ServiceUserPort) {
 
         val user = UserConverter.userRequestToUser(request)
 
+        println(user.login)
+        println(user.password)
+
         return service.createUser(user) //HttpResponse.created(HttpStatus.CREATED)
     }
 }

@@ -4,6 +4,6 @@ import java.util.*
 
 data class UserEvent(
     val id: UUID?,
-    val login: String?,
-    val password: String?
+    val login: String,
+    val password: String
 )
