@@ -8,13 +8,15 @@ import io.micronaut.http.HttpResponse
 import io.micronaut.http.HttpStatus
 import io.micronaut.http.MediaType.APPLICATION_JSON
 import io.micronaut.http.annotation.*
+import io.micronaut.validation.Validated
 import javax.validation.Valid
 
+@Validated
 @Controller
 class UserController(private val service: ServiceUserPort) {
 
     @Post("/usuario")
-    fun post(@Body request: UserRequest): UserRequest {
+    fun post(@Body @Valid request: UserRequest): UserRequest {
 
         val user = UserConverter.userRequestToUser(request)
 
